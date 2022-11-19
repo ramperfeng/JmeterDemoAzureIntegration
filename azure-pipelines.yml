@@ -18,7 +18,7 @@ steps:
           ls -ltr collections
           
     - task: PublishTestResults@2
-      displayName: 'Publish Test Results for postman'
+      displayName: 'Publish Test Results for Jmeter'
       inputs:
        testResultsFormat: 'JUnit'
        searchFolder: '$(System.DefaultWorkingDirectory)'
