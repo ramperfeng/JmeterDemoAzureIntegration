@@ -1,19 +1,29 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
-- main
+- master
 
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+
+steps:
+    - task: CmdLine@2
+      continueOnError: true
+      inputs:
+      
+        script: |
+          ls -ltr
+          pwd
+          docker run -v /home/vsts/work/1/s/collections:/etc/postman -t justb4/jmeter -n -t DemoPET.jmx -l log.jtl --reporters cli,junit --reporter-junit-export /etc/postman/junit-report.xml
+          ls -ltr collections
+          
+    - task: PublishTestResults@2
+      displayName: 'Publish Test Results for postman'
+      inputs:
+       testResultsFormat: 'JUnit'
+       searchFolder: '$(System.DefaultWorkingDirectory)'
+       testResultsFiles: '$(Build.SourcesDirectory)/TestFiles/LoadReports/Junit.xml'      
+       mergeTestResults: true
+       failTaskOnFailedTests: false
+       
+        
