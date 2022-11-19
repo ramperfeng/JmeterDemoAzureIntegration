@@ -14,7 +14,7 @@ steps:
         script: |
           ls -ltr
           pwd
-          docker run -v /home/vsts/work/1/s/collections:/entrypoint.sh -t justb4/jmeter -n -t DemoPET.jmx -l log.jtl
+          docker run -v /home/vsts/work/1/s/collections:/usr/bin/bash -t justb4/jmeter -n -t DemoPET.jmx -l log.jtl
           ls -ltr collections
           
     - task: PublishTestResults@2
