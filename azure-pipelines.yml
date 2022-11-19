@@ -14,7 +14,7 @@ steps:
         script: |
           ls -ltr
           pwd
-          docker run -v /home/vsts/work/1/s/collections:/etc/postman -t justb4/jmeter -n -t DemoPET.jmx -l log.jtl --reporters cli,junit --reporter-junit-export /etc/postman/junit-report.xml
+          docker run -v /home/vsts/work/1/s/collections:/etc/postman -t justb4/jmeter -n -t DemoPET.jmx -l log.jtl
           ls -ltr collections
           
     - task: PublishTestResults@2
@@ -22,7 +22,7 @@ steps:
       inputs:
        testResultsFormat: 'JUnit'
        searchFolder: '$(System.DefaultWorkingDirectory)'
-       testResultsFiles: '$(Build.SourcesDirectory)/TestFiles/LoadReports/Junit.xml'      
+       testResultsFiles: '$(Build.SourcesDirectory)/Junit.xml'      
        mergeTestResults: true
        failTaskOnFailedTests: false
        
