@@ -23,7 +23,7 @@ steps:
       inputs:
        testResultsFormat: 'JUnit'
        searchFolder: '$(System.DefaultWorkingDirectory)'
-       testResultsFiles: '/temp/test/index.html'      
+       testResultsFiles: '**/*.xml'   
        mergeTestResults: true
        failTaskOnFailedTests: false
        
