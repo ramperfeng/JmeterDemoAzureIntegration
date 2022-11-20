@@ -22,7 +22,7 @@ steps:
       inputs:
        testResultsFormat: 'JUnit'
        searchFolder: '$(System.DefaultWorkingDirectory)'
-       testResultsFiles: '$(Build.SourcesDirectory)/Junit.xml'      
+       testResultsFiles: '/temp/test/Junit.xml'      
        mergeTestResults: true
        failTaskOnFailedTests: false
        
