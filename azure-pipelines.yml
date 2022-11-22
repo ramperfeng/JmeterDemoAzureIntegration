@@ -14,7 +14,7 @@ steps:
         script: |
           ls -ltr
           pwd
-          docker run -v /home/vsts/work/1/s/collections:/temp/test -t justb4/jmeter -Jthreads=10 -Jrampup=20 -n -t /temp/test/DemoPET.jmx -l /temp/test/log.jtl -e -o tests/trivial/report/index.html
+          docker run -v /home/vsts/work/1/s/collections:/temp/test -t justb4/jmeter -Jthreads=10 -Jrampup=20 -n -t /temp/test/DemoPET.jmx -l /temp/test/log.jtl -e -o /temp/test/report/index.html
           
           ls -ltr
           pwd
@@ -23,7 +23,7 @@ steps:
       inputs:
        testResultsFormat: 'JUnit'
        searchFolder: '$(System.DefaultWorkingDirectory)'   
-       testResultsFiles: '$(Build.SourcesDirectory)/tests/trivial/report/index.html'      
+       testResultsFiles: '**/report/index.html'      
        mergeTestResults: true
        failTaskOnFailedTests: false      
     
