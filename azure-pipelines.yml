@@ -14,10 +14,15 @@ steps:
         script: |
           ls -ltr
           pwd
-          docker run -v /home/vsts/work/1/s/collections:/temp/test -t justb4/jmeter -Jthreads=10 -Jrampup=20 -n -t /temp/test/DemoPET.jmx -l /home/vsts/work/1/s/collections/log.jtl -e -o index.html
+          docker run -v /home/vsts/work/1/s/collections:/temp/test -t justb4/jmeter -Jthreads=10 -Jrampup=20 -n -t /temp/test/DemoPET.jmx -l /home/vsts/work/1/s/collections/log.jtl
           ls -ltr collections
           ls -ltr /home/vsts/work/1/s
           pwd
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFormat: 'JUnit'
+        testResultsFiles: '**/TEST-*.xml'
+          
     - task: PublishTestResults@2
       displayName: 'Publish Test Results for Jmeter'
       inputs:
