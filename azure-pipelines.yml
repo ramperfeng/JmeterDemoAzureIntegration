@@ -16,14 +16,14 @@ steps:
           pwd
           docker run -v /home/vsts/work/1/s/collections:/temp/test -t justb4/jmeter -Jthreads=10 -Jrampup=20 -n -t /temp/test/DemoPET.jmx -l **/log.jtl -e -o index.html
           ls -ltr collections
-          ls -ltr /temp/test
+          ls -ltr /home/vsts/work/1/s
           pwd
     - task: PublishTestResults@2
       displayName: 'Publish Test Results for Jmeter'
       inputs:
        testResultsFormat: 'JUnit'
        searchFolder: '$(System.DefaultWorkingDirectory)'   
-       testResultsFiles: '**/index.html'      
+       testResultsFiles: '**/*.html'      
        mergeTestResults: true
        failTaskOnFailedTests: false      
     
