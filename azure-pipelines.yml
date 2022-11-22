@@ -24,13 +24,12 @@ steps:
         testResultsFiles: '**/TEST-*.xml'
           
     - task: PublishTestResults@2
-      displayName: 'Publish Test Results for Jmeter'
       inputs:
-       testResultsFormat: 'JUnit'
-       searchFolder: '$(System.DefaultWorkingDirectory)'   
-       testResultsFiles: '**/*.html'      
-       mergeTestResults: true
-       failTaskOnFailedTests: false      
+        testResultsFormat: 'JUnit'
+        testResultsFiles: '**/*.xml'
+        searchFolder: '**'
+        mergeTestResults: true
+        failTaskOnFailedTests: true
     
        
         
