@@ -15,7 +15,7 @@ steps:
           ls -ltr
           pwd
           docker run -v /home/vsts/work/1/s/collections:/temp/test -t justb4/jmeter -Jthreads=10 -Jrampup=20 -n -t /temp/test/DemoPET.jmx -l /temp/test/log.jtl -e -o index.html
-          
+          ls -ltr log.jtl
           ls -ltr
           pwd
     - task: PublishTestResults@2
