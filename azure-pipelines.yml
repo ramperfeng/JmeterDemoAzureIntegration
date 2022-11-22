@@ -23,7 +23,7 @@ steps:
       inputs:
        testResultsFormat: 'JUnit'
        searchFolder: '$(System.DefaultWorkingDirectory)'   
-       testResultsFiles: 'tests/trivial/report/index.html'      
+       testResultsFiles: '$(Build.SourcesDirectory)/tests/trivial/report/index.html'      
        mergeTestResults: true
        failTaskOnFailedTests: false      
     
