@@ -31,6 +31,6 @@ steps:
     - task: publishhtmlreport@1
       inputs:
         htmlType: 'genericHTML'
-        htmlPath: '$(Build.SourcesDirectory)/collections/Sample.html'        
+        htmlPath: '/home/vsts/work/1/s/collections/report.html'        
     
         
