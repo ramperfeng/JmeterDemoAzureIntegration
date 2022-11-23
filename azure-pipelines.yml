@@ -22,15 +22,12 @@ steps:
           pwd
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '$(Pipeline.Workspace)/s/collections/report'
+        targetPath: '/home/vsts/work/_tasks/report'
         publishLocation: 'pipeline'
 
         
     - task: publishhtmlreport@1
       inputs:          
-        script:  |
-          ls -ltr
-          pwd 
         htmlType: 'genericHTML'
         htmlPath: '$(Build.SourcesDirectory)/Sample.html'     
     
