@@ -26,7 +26,7 @@ steps:
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'JUnit'
-        testResultsFiles: '**/*.xml'
+        testResultsFiles: '**/*.html'
         searchFolder: '**'
         mergeTestResults: true
         failTaskOnFailedTests: true
