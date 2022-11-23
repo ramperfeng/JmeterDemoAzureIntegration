@@ -26,7 +26,11 @@ steps:
 
     - task: publishhtmlreport@1
       inputs:
-            htmlType: 'genericHTML'
-            JmeterReportsPath: '$(Build.SourcesDirectory)/collections/report'
+        htmlType: 'genericHTML'
+        JmeterReportsPath: '$(Build.SourcesDirectory)/collections/report'
+    - task: publishhtmlreport@1
+      inputs:
+        htmlType: 'genericHTML'
+        htmlPath: '$(Build.SourcesDirectory)/Sample.html'        
     
         
