@@ -17,10 +17,18 @@ steps:
           docker run -v /home/vsts/work/1/s/collections:/temp/test -t justb4/jmeter -Jthreads=10 -Jrampup=20 -n -t /temp/test/DemoPET.jmx -l /temp/test/log.jtl -e -o /temp/test/report 
           ls -ltr collections
           ls -ltr /home/vsts/work/1/s
+
           pwd
     - task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Pipeline.Workspace)/s/collections/report'
         publishLocation: 'pipeline'
-       
-        
+    - task: Publishhtmlreport@1
+      inputs:
+        htmlType: 'Jmeter'
+        JmeterReportsPath: '$(Build.SourcesDirectory)/LoadReports'
+
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFormat: 'JUnit'
+        testResultsFiles: '**/TEST-*.xml'    
