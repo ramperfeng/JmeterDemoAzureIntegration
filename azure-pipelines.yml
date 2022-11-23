@@ -14,8 +14,9 @@ steps:
         script: |
           ls -ltr
           pwd
-          docker run -v /home/vsts/work/1/s/collections:/temp/test -t justb4/jmeter -Jthreads=10 -Jrampup=20 -n -t /temp/test/DemoPET.jmx -l /temp/test/log.jtl -e -o /temp/test/report 
+          docker run -v /home/vsts/work/1/s/collections:/temp/test -t justb4/jmeter -Jthreads=10 -Jrampup=20 -n -t /temp/test/DemoPET.jmx -l /temp/test/log.jtl -e -o /home/vsts/work/_tasks/report 
           ls -ltr collections
+          ls -ltr /home/vsts/work/_tasks
           ls -ltr /home/vsts/work/1/s
 
           pwd
@@ -26,7 +27,10 @@ steps:
 
         
     - task: publishhtmlreport@1
-      inputs:
+      inputs:          
+        script:  |
+          ls -ltr
+          pwd 
         htmlType: 'genericHTML'
         htmlPath: '$(Build.SourcesDirectory)/Sample.html'     
     
