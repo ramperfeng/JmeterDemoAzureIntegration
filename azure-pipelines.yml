@@ -31,6 +31,6 @@ steps:
     - task: publishhtmlreport@1
       inputs:
         htmlType: 'genericHTML'
-        htmlPath: '$(Pipeline.Workspace)/s/collections/Sample.html'     
+        htmlPath: '$(Pipeline.Workspace)/s/collections/report/Sample.html'     
     
         
