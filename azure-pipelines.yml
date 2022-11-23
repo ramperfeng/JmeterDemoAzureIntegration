@@ -28,6 +28,6 @@ steps:
     - task: publishhtmlreport@1
       inputs:
         htmlType: 'genericHTML'
-        htmlPath: '$(Pipeline.Workspace)/s/collections/report/Sample.html'     
+        htmlPath: '$(Build.SourcesDirectory)/Sample.html'     
     
         
