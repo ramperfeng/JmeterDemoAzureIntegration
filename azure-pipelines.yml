@@ -23,11 +23,7 @@ steps:
       inputs:
         targetPath: '$(Pipeline.Workspace)/s/collections/report'
         publishLocation: 'pipeline'
-    - task: Publishhtmlreport@1
-      inputs:
-        htmlType: 'Jmeter'
-        JmeterReportsPath: '$(Build.SourcesDirectory)/LoadReports'
-
+    
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'JUnit'
