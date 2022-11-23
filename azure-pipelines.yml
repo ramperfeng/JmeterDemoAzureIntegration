@@ -24,11 +24,14 @@ steps:
         targetPath: '$(Pipeline.Workspace)/s/collections/report'
         publishLocation: 'pipeline'
 
-   
     - task: publishhtmlreport@1
       inputs:
-        htmlType: 'genericHTML'
-        JmeterReportsPath: '/temp/test/report'
+        htmlType: 'Jmeter'
+        JmeterReportsPath: '$(Build.SourcesDirectory)/temp/test'
+    - task: publishhtmlreport@1
+      inputs:
+         htmlType: 'genericHTML'
+         htmlPath: '$(Build.SourcesDirectory)/Sample.html'
               
     
         
