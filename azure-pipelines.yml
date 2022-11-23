@@ -23,8 +23,9 @@ steps:
       inputs:
         targetPath: '$(Pipeline.Workspace)/s/collections/report'
         publishLocation: 'pipeline'
-    
-    - task: PublishTestResults@2
+    - task: PublishPipelineArtifact@1
       inputs:
-        testResultsFormat: 'JUnit'
-        testResultsFiles: '**/TEST-*.xml'    
+        targetPath: '$(Pipeline.Workspace)/s/collections/log.jtl'
+        publishLocation: 'pipeline'
+    
+        
