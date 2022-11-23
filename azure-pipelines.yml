@@ -19,13 +19,6 @@ steps:
           ls -ltr /home/vsts/work/_tasks
           ls -ltr /home/vsts/work/1/s
 
-          pwd
-    - task: PublishPipelineArtifact@1
-      inputs:
-        targetPath: '/home/vsts/work/_tasks/report'
-        publishLocation: 'pipeline'
-
-        
     - task: publishhtmlreport@1
       inputs:          
         htmlType: 'genericHTML'
