@@ -21,10 +21,6 @@ steps:
           pwd
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '$(Pipeline.Workspace)/s/collections/report'
-        publishLocation: 'pipeline'
-    - task: PublishPipelineArtifact@1
-      inputs:
         targetPath: '$(Pipeline.Workspace)/s/collections/log.jtl'
         publishLocation: 'pipeline'
     
