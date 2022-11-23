@@ -18,18 +18,9 @@ steps:
           ls -ltr collections
           ls -ltr /home/vsts/work/1/s
           pwd
-    - task: PublishTestResults@2
+    - task: PublishPipelineArtifact@1
       inputs:
-        testResultsFormat: 'JUnit'
-        testResultsFiles: '**/TEST-*.xml'
-          
-    - task: PublishTestResults@2
-      inputs:
-        testResultsFormat: 'JUnit'
-        testResultsFiles: '**/*.html'
-        searchFolder: '**'
-        mergeTestResults: true
-        failTaskOnFailedTests: true
-    
+        targetPath: '$(Pipeline.Workspace)/collections/report'
+        publishLocation: 'pipeline'
        
         
