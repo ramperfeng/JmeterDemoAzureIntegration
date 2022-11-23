@@ -27,7 +27,7 @@ steps:
     - task: publishhtmlreport@1
       inputs:
         htmlType: 'genericHTML'
-        htmlPath: 'ShanmugaSubramanianLennox.PublishHTMLReports.publishhtmlreport.publishhtmlreport, LakshayKaushik.PublishHTMLReports.publishhtmlreport.publishhtmlreport'
-        JmeterReportsPath: '$(Pipeline.Workspace)/s/collections/*.html'        
+        htmlPath: '$(Build.SourcesDirectory)/Sample.html'
+        JmeterReportsPath: '$(Pipeline.Workspace)/s/collections/report'        
     
         
