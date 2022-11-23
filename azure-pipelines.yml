@@ -28,7 +28,7 @@ steps:
     - task: publishhtmlreport@1
       inputs:
         htmlType: 'genericHTML'
-        JmeterReportsPath: '/home/vsts/work/1/s/collections/report'
+        JmeterReportsPath: '/temp/test/report'
               
     
         
