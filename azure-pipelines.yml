@@ -23,6 +23,6 @@ steps:
     - task: publishhtmlreport@1
       inputs:          
         htmlType: 'genericHTML'
-        htmlPath: '$(Build.SourcesDirectory)/Sample.html'     
+        htmlPath: 'collections/Sample.html'     
     
         
