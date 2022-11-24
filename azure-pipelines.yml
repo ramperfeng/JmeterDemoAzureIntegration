@@ -19,9 +19,10 @@ steps:
           ls -ltr collections
           ls -ltr /home/vsts/work/_tasks
           ls -ltr /home/vsts/work/1/s
-
-    - task: DownloadPipelineArtifact@2
-      inputs:
-          buildType: 'current'
-          targetPath: '$(Pipeline.Workspace)/collections'
+  
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)/collections'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
    
