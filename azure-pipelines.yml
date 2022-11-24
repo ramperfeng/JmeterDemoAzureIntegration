@@ -23,7 +23,7 @@ steps:
     
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '$(Pipeline.Workspace)/s/collections'
+        targetPath: '$(Pipeline.Workspace)/s/collections/report'
         publishLocation: 'pipeline'
 
    
