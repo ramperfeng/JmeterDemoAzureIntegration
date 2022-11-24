@@ -25,5 +25,8 @@ steps:
       inputs:
         targetPath: '$(Pipeline.Workspace)/s/collections/report'
         publishLocation: 'pipeline'
-
+    - task: publishhtmlreport@1
+      inputs:
+        htmlType: 'genericHTML'
+        htmlPath: '$(Pipeline.Workspace)/s/collections/report/index.html'
    
