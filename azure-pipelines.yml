@@ -23,7 +23,7 @@ steps:
     - task: DownloadPipelineArtifact@2
       inputs:
           buildType: 'current'
-          targetPath: '$(Pipeline.Workspace)/collections/report'
+          targetPath: '$(Pipeline.Workspace)/temp/test/report'
     - task: publishhtmlreport@1
       inputs:          
         htmlType: 'genericHTML'
