@@ -20,9 +20,9 @@ steps:
           ls -ltr /home/vsts/work/_tasks
           ls -ltr /home/vsts/work/1/s
   
-          - task: PublishBuildArtifacts@1
-            inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)/collections'
-              ArtifactName: 'drop'
-              publishLocation: 'Container'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/collections'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
    
