@@ -34,10 +34,13 @@ steps:
       inputs:
         sendMailConditionConfig: 'Always'
         subject: '[{environmentStatus}] {passPercentage} tests passed in $(Release.EnvironmentName) stage for $(Build.BuildNumber)'
+        includeInToSectionStr: '1, 3'
         toAddress: 'ram0309m@gmail.com'
-        defaultDomain: 'xxxxxxx.com'
+        defaultDomain: 'demo.wftpserver.com'
         groupTestResultsBy: 'run'
-        includeCommits: false
+        includeCommits: true
         maxTestFailuresToShow: '15'
         includeOthersInTotal: true
-        usePreviousEnvironment: false
+        usePreviousEnvironment: true
+        enableTLS: true
+        smtpConnectionEndpoint: 'demo.wftpserver.com'
