@@ -30,4 +30,14 @@ steps:
         htmlType: 'Jmeter'
         JmeterReportsPath: '$(Pipeline.Workspace)/s/collections/report'  
           
-    
+    - task: CalromEmailReport@1
+      inputs:
+        sendMailConditionConfig: 'Always'
+        subject: '[{environmentStatus}] {passPercentage} tests passed in $(Release.EnvironmentName) stage for $(Build.BuildNumber)'
+        toAddress: 'ram0309m@gmail.com'
+        defaultDomain: 'xxxxxxx.com'
+        groupTestResultsBy: 'run'
+        includeCommits: false
+        maxTestFailuresToShow: '15'
+        includeOthersInTotal: true
+        usePreviousEnvironment: false
