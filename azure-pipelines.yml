@@ -30,15 +30,4 @@ steps:
         htmlType: 'Jmeter'
         JmeterReportsPath: '$(Pipeline.Workspace)/s/collections/report'  
           
-    - task: SendEmail@1
-      inputs:
-        To: 'ram0309m@gmail.com'
-        From: 'ram0309m@gmail.com'
-        Subject: 'Jmeter Reports'
-        Body: 'Test Results'
-        BodyAsHtml: true
-        AddAttachment: true
-        SmtpServer: 'demo.wftpserver.com'
-        SmtpPort: '2222'
-        SmtpUsername: 'demo-user'
-        SmtpPassword: 'demo-user'
+    
